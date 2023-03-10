@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { AccordionModule } from 'primeng/accordion';
+import {AnimateModule} from 'primeng/animate';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { AvatarModule } from 'primeng/avatar';
@@ -33,6 +34,7 @@ import { VirtualScrollerModule } from 'primeng/virtualscroller';
   imports: [
     AccordionModule,
     AutoCompleteModule,
+    AnimateModule,
     AvatarModule,
     CalendarModule,
     CardModule,
@@ -60,6 +62,7 @@ import { VirtualScrollerModule } from 'primeng/virtualscroller';
     VirtualScrollerModule
   ],
   exports: [
+    AnimateModule,
     AccordionModule,
     AutoCompleteModule,
     AvatarModule,
