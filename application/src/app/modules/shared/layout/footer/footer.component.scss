@@ -1,15 +1,31 @@
-.footer {
-  height: 8vh;
-  min-height: 60px;
+footer {
+  background-color: #162A83;
+  padding: 20px;
   display: flex;
-  justify-content: flex-end;
-  padding: 2vh 2vw;
-  border-top: 1px solid #dee2e6;
-  background-color: #001D4A;
-  color: white;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
-.footer-logo {
-  height: 100%;
-  min-height: 100%;
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.logo img {
+  width: 100%;
+  max-width: 200px;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    flex-direction: column;
+  }
+
+  .logo {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 }
