@@ -14,6 +14,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
   },
   {
+    path: 'detection-objets',
+    loadChildren: () => import('./modules/object-detection/object-detection.module').then(m => m.ObjectDetectionModule),
+  },
+  {
     path: '**',
     redirectTo: 'page-introuvable',
     pathMatch: 'full'
