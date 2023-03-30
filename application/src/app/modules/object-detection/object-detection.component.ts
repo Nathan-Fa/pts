@@ -1,6 +1,5 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import * as cocoSsd from '@tensorflow-models/coco-ssd';
-import {MenuItem} from "primeng/api";
 
 @Component({
   selector: 'app-object-detection',

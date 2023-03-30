@@ -31,6 +31,7 @@ import { TabViewModule } from 'primeng/tabview';
 import { ToastModule } from 'primeng/toast';
 import { VirtualScrollerModule } from 'primeng/virtualscroller';
 import { SpeedDialModule } from 'primeng/speeddial';
+import { OrganizationChartModule } from 'primeng/organizationchart';
 
 @NgModule({
   imports: [
@@ -63,7 +64,8 @@ import { SpeedDialModule } from 'primeng/speeddial';
     TableModule,
     ToastModule,
     VirtualScrollerModule,
-    SpeedDialModule
+    SpeedDialModule,
+    OrganizationChartModule
   ],
   exports: [
     AnimateModule,
@@ -95,7 +97,8 @@ import { SpeedDialModule } from 'primeng/speeddial';
     TableModule,
     ToastModule,
     VirtualScrollerModule,
-    SpeedDialModule
+    SpeedDialModule,
+    OrganizationChartModule
   ],
   providers: [MessageService, ConfirmationService]
 })
