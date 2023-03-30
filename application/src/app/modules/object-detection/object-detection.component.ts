@@ -1,21 +1,23 @@
-import {Component, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import * as cocoSsd from '@tensorflow-models/coco-ssd';
+import {MenuItem} from "primeng/api";
 
 @Component({
   selector: 'app-object-detection',
   templateUrl: './object-detection.component.html',
   styleUrls: ['./object-detection.component.css']
 })
-export class ObjectDetectionComponent {
+export class ObjectDetectionComponent implements AfterViewInit{
 
   @ViewChild("video")
   public video: any;
-  //public video: ElementRef;
   error: any;
+
   predictionValue = [{
     class: '- - -',
     score: 0
   }];
+
   totalObjectsDetected = 0;
   dataLoading = false;
 
@@ -46,10 +48,11 @@ export class ObjectDetectionComponent {
   // turn off device camera
   stopCamera() {
     this.video.nativeElement.srcObject.getTracks().forEach((track: { stop: () => any; }) => track.stop());
+    this.dataLoading = false;
   }
 
   // turn on device camera
-  async starCamera() {
+  async startCamera() {
     await this.setupDevices();
   }
 
@@ -58,7 +61,9 @@ export class ObjectDetectionComponent {
     this.dataLoading = true;
     cocoSsd.load().then(model => {
       model.detect(this.video.nativeElement).then(predictions => {
+        console.log(predictions);
         this.predictionValue = predictions;
+        this.predictionValue.forEach(element  => {element.score = Math.round(element.score * 100)});
         this.totalObjectsDetected = predictions.length
         this.dataLoading = false;
       });

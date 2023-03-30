@@ -17,6 +17,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { KeyFilterModule } from 'primeng/keyfilter';
+import { KnobModule } from 'primeng/knob';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
 import { MultiSelectModule } from 'primeng/multiselect';
@@ -29,6 +30,7 @@ import { TableModule } from 'primeng/table';
 import { TabViewModule } from 'primeng/tabview';
 import { ToastModule } from 'primeng/toast';
 import { VirtualScrollerModule } from 'primeng/virtualscroller';
+import { SpeedDialModule } from 'primeng/speeddial';
 
 @NgModule({
   imports: [
@@ -48,6 +50,7 @@ import { VirtualScrollerModule } from 'primeng/virtualscroller';
     InputTextModule,
     InputTextareaModule,
     KeyFilterModule,
+    KnobModule,
     MessageModule,
     MessagesModule,
     MultiSelectModule,
@@ -59,7 +62,8 @@ import { VirtualScrollerModule } from 'primeng/virtualscroller';
     TabViewModule,
     TableModule,
     ToastModule,
-    VirtualScrollerModule
+    VirtualScrollerModule,
+    SpeedDialModule
   ],
   exports: [
     AnimateModule,
@@ -78,6 +82,7 @@ import { VirtualScrollerModule } from 'primeng/virtualscroller';
     InputTextModule,
     InputTextareaModule,
     KeyFilterModule,
+    KnobModule,
     MessageModule,
     MessagesModule,
     MultiSelectModule,
@@ -89,7 +94,8 @@ import { VirtualScrollerModule } from 'primeng/virtualscroller';
     TabViewModule,
     TableModule,
     ToastModule,
-    VirtualScrollerModule
+    VirtualScrollerModule,
+    SpeedDialModule
   ],
   providers: [MessageService, ConfirmationService]
 })
