@@ -1,3 +1,46 @@
 <app-header></app-header>
 
+<div class="content">
+
+  <p-card>
+    <div class="video-container" *ngIf="!error">
+      <video #video id="video" autoplay></video>
+    </div>
+
+    <div class="container">
+      <div class="flex justify-content-center flex-wrap align-items-center">
+        <p-button label="Lancer la caméra" icon="pi pi-play" styleClass="p-button-sm" (click)="startCamera()"></p-button>
+        <p-button label="Démarrer la détection" icon="pi pi-camera" styleClass="p-button-sm" (click)="loadImageDetection()"></p-button>
+        <p-button label="Arrêter la caméra" icon="pi pi-stop" styleClass="p-button-sm" (click)="stopCamera()"></p-button>
+      </div>
+
+      <div class="alert alert-danger" role="alert">
+        {{error}}
+      </div>
+    </div>
+
+    <h3>Nombre d'objets détectés : {{ totalObjectsDetected }}</h3>
+    &nbsp;&nbsp;
+    <p-progressSpinner *ngIf="dataLoading" class="justify-content-center flex"></p-progressSpinner>
+
+    <p-table  *ngIf="totalObjectsDetected > 0 " [value]="predictionValue">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Objet détecté</th>
+          <th>Score</th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-predictionValue>
+        <tr>
+          <td>{{ predictionValue.class }}</td>
+          <td><p-knob [readonly]="true" [(ngModel)]="predictionValue.score"></p-knob></td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+  </p-card>
+
+</div>
+
 <app-footer></app-footer>

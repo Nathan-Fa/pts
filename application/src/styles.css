@@ -10,6 +10,7 @@ html {
   font-size: 16px;
   height: 100%;
   font-family: 'Nunito', sans-serif;
+  color: #001D4A;
 }
 
 a {
@@ -23,11 +24,22 @@ a {
   padding: 4vh 2vw;
   display: flex;
   flex-direction: column;
-  min-height: 82vh;
+  min-height: 80vh;
 }
 
 .title-1 {
   font-size: 26px;
   font-weight: 700;
+  color: #001D4A;
+}
+
+button {
+  background-color: #162A83 !important;
+  color: white;
+  text-transform: uppercase;
+  border-color: #162A83 !important;
+}
+
+h3 {
   color: #001D4A;
 }

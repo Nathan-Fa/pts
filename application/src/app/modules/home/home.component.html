@@ -1,47 +1,19 @@
 <app-header></app-header>
 
 <div class="content">
-  <span class="title-1">
+  <span class="title-1 justify-content-center align-content-center flex text-center">
     Bienvenue sur l'application de détection
   </span>
 
-  <p-card class="mt-2">
-    <div class="video-container" *ngIf="!error">
-      <video #video id="video" [width]="WIDTH" [height]="HEIGHT" autoplay></video>
-    </div>
-    
-    <div class="snap-container">
-      <button class="btn btn-primary" (click)="stopCamera()">Stop Stream</button>
-      <button class="btn btn-primary" (click)="starCamera()">Sart Stream </button>
-      <button class="btn btn-primary" (click)="loadImageDetection()">Sart Detection</button>
-    
-      <div class="alert alert-danger" role="alert">
-        {{error}}
-      </div>
-    </div>
-    
-    <hr>
-    <button type="button" class="btn btn-primary" style="font-size: 15px;">Total Objects Detected - <span class="badge"
-        style="font-size: 15px;">{{totalObjectsDetected}}</span></button>
-    &nbsp;&nbsp;
-    <span class="badge" *ngIf="dataLoading" style="font-size: 18px;color:sienna">object detection started Please
-      wait...</span>
-    <hr>
-    
-    <div class="snap-container" style="margin-top: 20px;">
-      <table>
-        <tr>
-          <th>Detected Object</th>
-          <th>Score</th>
-        </tr>
-        <tr *ngFor="let predictionValues of predictionValue">
-          <td>{{predictionValues.class}}</td>
-          <td>{{predictionValues.score}}</td>
-        </tr>
-      </table>
-    </div>
-    
-  </p-card>
+  <p-button class="mt-6 justify-content-center align-content-center flex" routerLink="/detection-objets" styleClass="p-button-lg"
+            label="Détectons des choses !">
+  </p-button>
+
+  <span class="justify-content-center align-content-center flex text-center mt-8">
+    Dans le cadre ne notre projet PTS, nous avons développé une application de détection d'objets.
+  </span>
+
+  <span class="justify-content-center align-content-center flex text-center mt-4"><a routerLink="/a-propos">Découvrez notre projet</a></span>
 </div>
 
 <app-footer></app-footer>
